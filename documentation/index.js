@@ -12,9 +12,8 @@ module.exports = {
     description: 'nodejs-express-api',
     termsOfService: '',
     contact: {
-      name: 'Wolox',
-      email: 'tls@wolox.com.ar',
-      url: 'https://www.wolox.com.ar/'
+      name: 'Santiago Alcala',
+      email: 'salcala06@gmail.com.ar'
     },
     license: {
       name: 'MIT'
