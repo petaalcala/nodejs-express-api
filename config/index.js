@@ -46,7 +46,8 @@ const config = {
       nodeVersion: process.env.NODE_VERSION || 'X-Node-Version'
     },
     pagination: {
-      defaultLimit: process.env.DEFAULT_LIMIT || 10,
+      defaultLimit: process.env.DEFAULT_LIMIT || 100,
+      defaultMaxLimit: process.env.DEFAULT_MAX_LIMIT || 1000,
       defaultOffset: process.env.DEFAULT_OFFSET || 0
     }
   }
