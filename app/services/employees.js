@@ -1,15 +1,14 @@
 const axios = require('axios').default;
 const logger = require('../logger');
+const { externalEmployeesServiceUrl } = require('../../config').common;
 
-exports.getEmployees = params => {
+const callExternalEmployees = params => {
   logger.info(`Trying to get employees from external service with params: ${JSON.stringify(params)}}`);
-  return axios
-    .get('https://rfy56yfcwk.execute-api.us-west-1.amazonaws.com/bigcorp/employees', {
-      params: {
-        limit: params.limit,
-        offset: params.offset
-      }
-    })
+  return axios.get(`${externalEmployeesServiceUrl}/bigcorp/employees`, { params });
+};
+
+exports.getEmployees = params =>
+  callExternalEmployees({ limit: params.limit, offset: params.offset })
     .then(response => response.data)
     .catch(error => {
       logger.error(
@@ -18,16 +17,9 @@ exports.getEmployees = params => {
       );
       throw error;
     });
-};
 
-exports.getEmployee = params => {
-  logger.info(`Trying to get employees from external service with params: ${JSON.stringify(params)}}`);
-  return axios
-    .get('https://rfy56yfcwk.execute-api.us-west-1.amazonaws.com/bigcorp/employees', {
-      params: {
-        id: params.id
-      }
-    })
+exports.getEmployee = params =>
+  callExternalEmployees({ id: params.id })
     .then(response => response.data)
     .catch(error => {
       logger.error(
@@ -36,4 +28,3 @@ exports.getEmployee = params => {
       );
       throw error;
     });
-};

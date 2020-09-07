@@ -49,7 +49,8 @@ const config = {
       defaultLimit: process.env.DEFAULT_LIMIT || 100,
       defaultMaxLimit: process.env.DEFAULT_MAX_LIMIT || 1000,
       defaultOffset: process.env.DEFAULT_OFFSET || 0
-    }
+    },
+    externalEmployeesServiceUrl: 'https://rfy56yfcwk.execute-api.us-west-1.amazonaws.com'
   }
 };
 
