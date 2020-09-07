@@ -6,5 +6,9 @@ module.exports = {
   OFFSET: {
     code: '0002',
     message: 'Offset has an invalid value'
+  },
+  ID: {
+    code: '0003',
+    message: 'ID must be an integer'
   }
 };
