@@ -44,6 +44,10 @@ const config = {
       apiDate: process.env.API_DATE || 'X-API-Date',
       packageVersion: process.env.PACKAGE_VERSION || 'X-Package-Version',
       nodeVersion: process.env.NODE_VERSION || 'X-Node-Version'
+    },
+    pagination: {
+      defaultLimit: process.env.DEFAULT_LIMIT || 10,
+      defaultOffset: process.env.DEFAULT_OFFSET || 0
     }
   }
 };
