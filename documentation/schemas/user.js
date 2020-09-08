@@ -9,7 +9,7 @@ module.exports = {
   },
   userEmail: {
     type: 'string',
-    example: 'tom.engels@wolox.com.ar'
+    example: 'tom.engels@gmail.com.ar'
   },
   User: {
     type: 'object',

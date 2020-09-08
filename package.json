@@ -27,7 +27,7 @@
     "node_modules"
   ],
   "main": "app.js",
-  "author": "Wolox",
+  "author": "Santiago Alcala",
   "homepage": "git@github.com:petaalcala/nodejs-express-api.git",
   "license": "MIT",
   "repository": {
