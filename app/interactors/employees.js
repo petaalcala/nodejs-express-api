@@ -1,11 +1,12 @@
 const { getEmployees } = require('../services/employees');
-const { departmentValue } = require('../helpers/employees');
+const { departmentValue } = require('../helpers/departments');
+const { officeValue } = require('../helpers/offices');
 const logger = require('../logger');
 
 const functions = {
   department: departmentValue,
   superdepartment: departmentValue,
-  manager: () => ({ manager: 'putoelquelee' })
+  office: officeValue
 };
 
 const functionRecursiva = (element, relationArrays = []) => {

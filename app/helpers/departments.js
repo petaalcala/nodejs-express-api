@@ -9,12 +9,3 @@ exports.superDepartmentValue = departmentId => {
   if (!department.superdepartment) return department;
   return { ...department, superdepartment: exports.departmentValue(department.superdepartment) };
 };
-
-exports.addDepartmentInfo = employees =>
-  employees.map(employee => ({ ...employee, department: exports.departmentValue(employee.department) }));
-
-exports.addSuperDepartmentInfo = employees =>
-  employees.map(employee => ({
-    ...employee,
-    department: exports.superDepartmentValue(employee.department)
-  }));
