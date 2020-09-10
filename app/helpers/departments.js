@@ -1,6 +1,5 @@
 const { getDepartment } = require('../services/departments');
 
-exports.departmentValueBis = department => Promise.resolve(department ? getDepartment(department) : null);
 exports.departmentValue = department =>
   new Promise(resolve => resolve(department ? getDepartment(department) : null));
 
