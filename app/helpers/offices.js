@@ -1,3 +1,3 @@
 const { getOffice } = require('../services/offices');
 
-exports.officeValue = office => (office ? getOffice(office) : null);
+exports.officeValue = office => new Promise(resolve => resolve(office ? getOffice(office) : null));
