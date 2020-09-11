@@ -1,0 +1,24 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    container_name: cache
+    networks:
+      - redis
+  app:
+    build: ./
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 3000:3000
+      - 8080:8080
+    links:
+      - redis
+    environment:
+      - NODE_ENV=development
+      - REDIS_URL=redis://cache
+    networks:
+      - redis
+networks:
+  redis:
+    driver: bridge

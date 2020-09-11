@@ -27,14 +27,15 @@ const findRelation = async (element, relationArrays = []) => {
   };
 };
 
+const processRelations = (expands, employee) =>
+  Promise.all(expands.map(expand => findRelation(employee, expand.split('.'))));
+
 exports.getEmployees = async params => {
   try {
     const employees = await getEmployees(params);
     return await Promise.all(
       employees.map(async employee => {
-        const relations = await Promise.all(
-          params.expand.map(expand => findRelation(employee, expand.split('.')))
-        );
+        const relations = params.expand ? await processRelations(params.expand, employee) : [];
         return relations.reduce((acc, item) => ({ ...acc, ...item }), employee);
       })
     );
