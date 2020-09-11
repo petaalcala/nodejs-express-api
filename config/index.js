@@ -32,7 +32,7 @@ const config = {
       password: process.env.DB_PASSWORD
     },
     redis: {
-      url: process.env.REDIS_URL
+      url: process.env.REDIS_URL || 'redis://localhost'
     },
     api: {
       bodySizeLimit: process.env.API_BODY_SIZE_LIMIT,
