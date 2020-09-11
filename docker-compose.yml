@@ -1,0 +1,16 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    container_name: cache
+  app:
+    build: ./
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 8080:8080
+    links:
+      - redis
+    environment:
+      - NODE_ENV=development
+      - REDIS_URL=redis://cache

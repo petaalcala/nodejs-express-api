@@ -27,7 +27,7 @@
     "node_modules"
   ],
   "main": "app.js",
-  "author": "Wolox",
+  "author": "Santiago Alcala",
   "homepage": "git@github.com:petaalcala/nodejs-express-api.git",
   "license": "MIT",
   "repository": {
@@ -36,7 +36,7 @@
   },
   "bugs": {
     "url": "git@github.com:petaalcala/nodejs-express-api.git/issues",
-    "email": "tls@wolox.com.ar"
+    "email": "salcala06@gmail.com"
   },
   "jest": {
     "coverageThreshold": {
@@ -65,14 +65,17 @@
     }
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "axios-cache-adapter": "^2.5.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "jwt-simple": "^0.5.1",
-    "umzug": "^2.1.0",
+    "express-validator": "^6.6.1",
     "express-wolox-logger": "^2.0.0",
-    "axios": "^0.19.2",
-    "swagger-ui-express": "^4.0.7"
+    "jwt-simple": "^0.5.1",
+    "redis": "^3.0.2",
+    "swagger-ui-express": "^4.0.7",
+    "umzug": "^2.1.0"
   },
   "devDependencies": {
     "babel": "6.23.0",

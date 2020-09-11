@@ -31,6 +31,9 @@ const config = {
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD
     },
+    redis: {
+      url: process.env.REDIS_URL || 'redis://localhost'
+    },
     api: {
       bodySizeLimit: process.env.API_BODY_SIZE_LIMIT,
       parameterLimit: process.env.API_PARAMETER_LIMIT,
@@ -44,7 +47,13 @@ const config = {
       apiDate: process.env.API_DATE || 'X-API-Date',
       packageVersion: process.env.PACKAGE_VERSION || 'X-Package-Version',
       nodeVersion: process.env.NODE_VERSION || 'X-Node-Version'
-    }
+    },
+    pagination: {
+      defaultLimit: process.env.DEFAULT_LIMIT || 100,
+      defaultMaxLimit: process.env.DEFAULT_MAX_LIMIT || 1000,
+      defaultOffset: process.env.DEFAULT_OFFSET || 0
+    },
+    externalEmployeesServiceUrl: 'https://rfy56yfcwk.execute-api.us-west-1.amazonaws.com'
   }
 };
 
