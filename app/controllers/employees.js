@@ -1,4 +1,5 @@
-const { getEmployees, getEmployee } = require('../services/employees');
+const { getEmployee } = require('../services/employees');
+const { getEmployees } = require('../interactors/employees');
 const { getEmployeesMapper, getEmployeeMapper } = require('../mappers/employees');
 const { paginatedResponse } = require('../serializers/pagination');
 

@@ -1,6 +1,9 @@
+const { paginationMapper } = require('./pagination');
+
 exports.getEmployeesMapper = params => ({
-  limit: params.limit,
-  offset: params.offset
+  ...paginationMapper(params),
+  expand: params.expand,
+  id: params.id
 });
 
 exports.getEmployeeMapper = params => ({

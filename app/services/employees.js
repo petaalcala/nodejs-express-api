@@ -8,7 +8,7 @@ const callExternalEmployees = params => {
 };
 
 exports.getEmployees = params =>
-  callExternalEmployees({ limit: params.limit, offset: params.offset })
+  callExternalEmployees({ limit: params.limit, offset: params.offset, id: params.id })
     .then(response => response.data)
     .catch(error => {
       logger.error(
