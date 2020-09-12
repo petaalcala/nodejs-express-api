@@ -5,7 +5,7 @@ exports.paginationSchema = {
   limit: {
     in: ['query'],
     isInt: {
-      options: { min: 1, max: defaultMaxLimit }
+      options: { min: 1, max: parseInt(defaultMaxLimit) }
     },
     optional: true,
     errorMessage: ERROR_CATALOG.LIMIT
