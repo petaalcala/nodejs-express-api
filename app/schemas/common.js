@@ -1,12 +1,15 @@
 const ERROR_CATALOG = require('./errorsCatalog');
 
-exports.commonFiltersSchema = {
+exports.expandSchema = {
   expand: {
     in: ['query'],
     toArray: true,
     optional: true,
     errorMessage: ERROR_CATALOG.EXPAND
-  },
+  }
+};
+
+exports.commonFiltersSchema = {
   id: {
     in: ['query'],
     isInt: true,

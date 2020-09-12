@@ -1,11 +1,13 @@
 const { paginationSchema } = require('./pagination');
-const { commonFiltersSchema } = require('./common');
+const { commonFiltersSchema, expandSchema } = require('./common');
 
 exports.getEmployeesSchema = {
   ...paginationSchema,
-  ...commonFiltersSchema
+  ...commonFiltersSchema,
+  ...expandSchema
 };
 
 exports.getEmployeeSchema = {
-  ...commonFiltersSchema
+  ...commonFiltersSchema,
+  ...expandSchema
 };
