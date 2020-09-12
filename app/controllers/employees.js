@@ -1,5 +1,4 @@
-const { getEmployee } = require('../services/employees');
-const { getEmployees } = require('../interactors/employees');
+const { getEmployees, getEmployee } = require('../interactors/employees');
 const { getEmployeesMapper, getEmployeeMapper } = require('../mappers/employees');
 const { paginatedResponse } = require('../serializers/pagination');
 
@@ -11,6 +10,6 @@ exports.getEmployees = ({ query }, res, next) =>
     .catch(next);
 
 exports.getEmployee = (req, res, next) =>
-  getEmployee(getEmployeeMapper(req.params))
-    .then(employee => res.status(200).send(JSON.stringify(employee)))
+  getEmployee(getEmployeeMapper(req.params, req.query))
+    .then(employee => res.status(200).send(employee))
     .catch(next);
