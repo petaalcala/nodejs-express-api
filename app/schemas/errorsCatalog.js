@@ -9,7 +9,7 @@ module.exports = {
   },
   ID: {
     code: '0003',
-    message: 'ID must be an integer'
+    message: 'ID must be an integer and cannot be sent with limit and offset'
   },
   EXPAND: {
     code: '0004',
