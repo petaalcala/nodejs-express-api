@@ -1,11 +1,11 @@
 const { paginationSchema } = require('./pagination');
 const { commonFiltersSchema } = require('./common');
 
-exports.getOfficesSchema = {
+exports.getDepartmentsSchema = {
   ...paginationSchema,
   ...commonFiltersSchema
 };
 
-exports.getOfficeSchema = {
+exports.getDepartmentSchema = {
   ...commonFiltersSchema
 };
