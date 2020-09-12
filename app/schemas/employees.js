@@ -27,5 +27,11 @@ exports.getEmployeeSchema = {
     isInt: true,
     toInt: true,
     errorMessage: ERROR_CATALOG.ID
+  },
+  expand: {
+    in: ['query'],
+    toArray: true,
+    optional: true,
+    errorMessage: ERROR_CATALOG.EXPAND
   }
 };
