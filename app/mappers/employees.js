@@ -6,6 +6,7 @@ exports.getEmployeesMapper = params => ({
   id: params.id
 });
 
-exports.getEmployeeMapper = params => ({
-  id: params.id
+exports.getEmployeeMapper = (params, query) => ({
+  id: params.id,
+  expand: query.expand
 });
