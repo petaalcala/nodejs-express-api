@@ -1,6 +1,4 @@
-jest.mock('../../app/services/employees');
-
-require('../../app/services/employees');
+const employees = jest.genMockFromModule('../employees');
 
 const externalApiEmployees = [
   {
@@ -53,4 +51,7 @@ const externalApiEmployees = [
   }
 ];
 
-exports.mockGetEmployees = () => jest.fn().mockResolvedValue(externalApiEmployees);
+employees.getEmployees = jest.fn(() => Promise.resolve(externalApiEmployees));
+employees.getEmployee = jest.fn(() => Promise.resolve(externalApiEmployees[0]));
+
+module.exports = employees;
