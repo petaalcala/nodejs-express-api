@@ -16,7 +16,7 @@ exports.getEmployees = async params => {
 exports.getEmployee = async params => {
   try {
     logger.info(`Trying to get employee with params ${JSON.stringify(params)}`);
-    const employee = getEmployee(params);
+    const employee = await getEmployee(params);
     return await processExpand(params.expand, employee);
   } catch (error) {
     logger.error('Error ocurred trying to get employee with message: ', error.message);

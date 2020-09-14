@@ -2,6 +2,7 @@ const axios = require('axios').default;
 const { setup, RedisStore } = require('axios-cache-adapter');
 const redis = require('redis');
 const logger = require('../logger');
+const { externalServiceError, externalServiceBadRequestError } = require('../errors');
 const {
   externalEmployeesServiceUrl,
   redis: { url: redisUrl }
@@ -37,7 +38,8 @@ exports.getEmployees = params =>
         'Error ocurred trying to get employees from external service with message:',
         error.message
       );
-      throw error;
+      if (error.response.status === 400) throw externalServiceBadRequestError(error.message);
+      throw externalServiceError(error.message);
     });
 
 exports.getEmployee = params =>
@@ -48,5 +50,6 @@ exports.getEmployee = params =>
         'Error ocurred trying to get employees from external service with message:',
         error.message
       );
-      throw error;
+      if (error.response.status === 400) throw externalServiceBadRequestError(error.message);
+      throw externalServiceError(error.message);
     });

@@ -16,3 +16,10 @@ exports.databaseError = message => internalError(message, exports.DATABASE_ERROR
 
 exports.DEFAULT_ERROR = 'default_error';
 exports.defaultError = message => internalError(message, exports.DEFAULT_ERROR);
+
+exports.EXT_SERVICE_ERROR = 'EXTERNAL_SERVICE_ERROR';
+exports.externalServiceError = message => internalError(message, exports.EXT_SERVICE_ERROR);
+
+exports.EXT_SERVICE_BAD_REQUEST_ERROR = 'EXT_SERVICE_BAD_REQUEST_ERROR';
+exports.externalServiceBadRequestError = message =>
+  internalError(message, exports.EXT_SERVICE_BAD_REQUEST_ERROR);

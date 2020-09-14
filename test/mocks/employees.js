@@ -1,8 +1,4 @@
-jest.mock('../../app/services/employees');
-
-require('../../app/services/employees');
-
-const externalApiEmployees = [
+exports.externalApiEmployees = [
   {
     first: 'Patricia',
     last: 'Diaz',
@@ -52,5 +48,3 @@ const externalApiEmployees = [
     office: 1
   }
 ];
-
-exports.mockGetEmployees = () => jest.fn().mockResolvedValue(externalApiEmployees);
