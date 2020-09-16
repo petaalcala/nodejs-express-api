@@ -73,6 +73,7 @@
     "express-validator": "^6.6.1",
     "express-wolox-logger": "^2.0.0",
     "jwt-simple": "^0.5.1",
+    "nock": "^13.0.4",
     "redis": "^3.0.2",
     "swagger-ui-express": "^4.0.7",
     "umzug": "^2.1.0"
