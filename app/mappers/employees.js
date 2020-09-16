@@ -8,5 +8,5 @@ exports.getEmployeesMapper = params => ({
 
 exports.getEmployeeMapper = (params, query) => ({
   id: params.id,
-  expand: query.expand
+  expand: query.expand || null
 });
